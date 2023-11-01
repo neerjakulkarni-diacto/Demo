@@ -10,3 +10,15 @@ sources:
       - name: consumer_master_profile
       - name: quiz
       - name: calendly_booking
+
+models:
+  - name: consumer_master_profile_f
+    columns:
+      - name: email_addr_txt
+        tests:
+          - unique
+          - not_null
+      
+
+
+          
