@@ -1,0 +1,12 @@
+version: 2
+ 
+sources:
+  - name: patient_sources
+    database: 'COLGATE'
+    schema: psa_patients
+    tables:
+      - name: booking
+      - name: case_status
+      - name: consumer_master_profile
+      - name: quiz
+      - name: calendly_booking
