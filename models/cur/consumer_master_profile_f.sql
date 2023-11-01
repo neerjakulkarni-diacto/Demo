@@ -14,4 +14,4 @@ with delta_stage_data as
     FROM {{ ref('consumer_master_profile_s') }} AS C
     qualify rn =1 )
    
-    select * exclude(rn) from delta_stage_data
+    select * exclude(rn), {{ surrogate_key(['EMAIL_ADDR_TXT', 'ACQUISITION_SOURCE_TXT']) }} as sk from delta_stage_data
