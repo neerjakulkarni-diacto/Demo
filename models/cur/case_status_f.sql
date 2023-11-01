@@ -11,7 +11,7 @@ with delta_stage_data as
         *,ROW_NUMBER() OVER(PARTITION BY EMAIL_ADDR_TXT
                    ORDER BY EMAIL_ADDR_TXT) as rn
  
-    FROM {{ ref('case_status_s') }} AS C )
+    FROM {{ ref('case_status_s') }} AS C 
+    qualify rn =1)
    
     select * exclude(rn) from delta_stage_data
-    
